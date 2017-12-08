@@ -1,0 +1,5 @@
+<div id="product-details-<%= @product.id %>">
+  <h5 id="hide_details_<%= @product.id %>" data-remote="true">Hide product details.</h5>
+  <p><%= @product.description %></p>
+  <p><%= number_to_currency @product.price %></p>
+</div>
