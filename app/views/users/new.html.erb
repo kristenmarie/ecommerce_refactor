@@ -1,9 +1,10 @@
 <h1>Sign up</h1>
-
+<%= render "layouts/errors", :object => @user %>
 <%= form_for :user, url: '/users' do |f| %>
 
   Name: <%= f.text_field :name %>
   Email: <%= f.text_field :email %>
+  <p>Password must contain <strong>at least 6</strong> characters, a digit, a lowercase character, a uppercase character, and a symbol.</p>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <span class="waves-effect waves-light btn"><%= f.submit "Sign up" %></span>

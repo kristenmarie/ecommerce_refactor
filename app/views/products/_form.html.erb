@@ -1,7 +1,9 @@
+<%= render "layouts/errors", :object => @product %>
+
 <%= form_for @product do |f| %>
   Name: <%= f.text_field :name %>
   Description: <%= f.text_field :description %>
   Price: <%= f.number_field :price, step: 0.01 %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "waves-effect waves-light btn" %>
 
 <% end %>

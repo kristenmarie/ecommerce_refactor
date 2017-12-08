@@ -27,6 +27,7 @@ This simple web application allows admin users to add, update and delete product
 * Admin update and delete functionality include flash messages.
 * Product price allows other than whole dollar amounts for admin product creating (for example 3.99).
 * Product validations have been added.
+* Added password validations to ensure a user's password is sufficiently complex.
 
 
 ## Setup/Installation Requirements
@@ -50,7 +51,6 @@ There are no known bugs at this time.
 
 * Add Paperclip for product image upload.
 * Add Stripe so users can pay when finalizing orders.
-* Add password validations to ensure a user's password is sufficiently complex.
 * Add admin links to navbar so admins can easily add, update and delete products.
 * Fix the row height for products, which can quickly become uneven.
 * Add integration testing for AJAX functionality.
@@ -62,7 +62,7 @@ Feel free to contact me at kristen.m.kulha@gmail.com
 
 ## Technologies Used
 
-_Ruby on Rails, RSpec, Capybara, AJAX, Materialize_ 
+_Ruby on Rails, RSpec, Capybara, AJAX, Materialize_
 
 ### License
 
