@@ -3,8 +3,15 @@
 <div class="row">
   <div class="section">
   <% @products.each do |product| %>
-    <div class="col s4">
-      <h4><%= product.name %></h4><p><%= link_to 'View Details', product_path(product), id: "show_link_#{product.id}", remote: true %></p>
+    <div class="col s4" id="product-<%= product.id %>">
+      <h4>
+        <%= product.name %>
+      </h4>
+      <% if current_user && current_user.admin %>
+        <button class="waves-effect waves-light btn red"><%= link_to "Delete", product_path(product), :data => {:confirm => "You sure?", :method => "delete"}, remote: true %></button>
+        <button class="waves-effect waves-light btn yellow"><%= link_to "Edit", edit_product_path(product) %></button>
+      <% end %>
+      <p><%= link_to 'View Details', product_path(product), id: "show_link_#{product.id}", remote: true %></p>
 
       <%= form_for @order_item, remote: true do |f| %>
         <%= f.hidden_field :product_id, value: product.id %>
