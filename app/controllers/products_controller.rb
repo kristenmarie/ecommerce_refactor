@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   before_filter :authorize, except: [:index, :show]
 
   def index
-    @user = current_user
     @products = Product.all
     @order_item = current_order.order_items.new
   end
@@ -33,10 +32,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:notice] = "#{@product.name} has been updated!"
-      respond_to do |format|
-        format.html { redirect_to products_path }
-        format.js
-      end
+      redirect_to products_path
     else
       render :edit
     end
@@ -53,6 +49,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price)
+    params.require(:product).permit(:name, :description, :price, :image)
   end
 end

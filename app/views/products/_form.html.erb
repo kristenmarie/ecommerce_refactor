@@ -4,6 +4,7 @@
   Name: <%= f.text_field :name %>
   Description: <%= f.text_field :description %>
   Price: <%= f.number_field :price, step: 0.01 %>
+  Image:  <%= f.file_field :image %>
   <%= f.submit "Submit", class: "waves-effect waves-light btn" %>
 
 <% end %>

@@ -10,6 +10,7 @@
       <h4>
         <%= product.name %>
       </h4>
+      <%= image_tag product.image.url(:medium) %>
       <% if current_user && current_user.admin %>
         <button class="waves-effect waves-light btn red"><%= link_to "Delete", product_path(product), :data => {:confirm => "You sure?", :method => "delete"}, remote: true %></button>
         <button class="waves-effect waves-light btn yellow"><%= link_to "Edit", edit_product_path(product) %></button>
